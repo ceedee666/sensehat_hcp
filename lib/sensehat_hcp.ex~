@@ -1,4 +1,0 @@
-defmodule SensehatHcp do
-	@oauth_token "2f40191d251ad64289e7874f3648e93"
-	@device_id "803bea58-60fa-47e0-9455-09455a0e4d4a"
-end
