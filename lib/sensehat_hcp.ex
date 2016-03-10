@@ -30,8 +30,8 @@ defmodule SensehatHcp do
 		  send_to_hcp
 
 		HCP.Message.new_pressure_sensor_message(
-			Sensors.PressureSensor.get_pressure(sm.ps)
-			Sensors.Pressureensor.get_temperature(sm.ps),
+			Sensors.PressureSensor.get_pressure(sm.ps),
+			Sensors.PressureSensor.get_temperature(sm.ps),
 		  ts) |>
 			Poison.encode! |>
 		  send_to_hcp
@@ -51,7 +51,7 @@ defmodule SensehatHcp do
 										           message_body,
 										           %{"Authorization" => "Bearer #{@oauth_token}", "Content-Type" => "application/json"})
 
-		Logger.debug "Message: #{inspect hsm}"
+		Logger.debug "Message: #{inspect message_body}"
 		Logger.debug "Response: #{inspect response}"
 	end
 end
